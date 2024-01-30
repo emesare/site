@@ -1,0 +1,21 @@
+base_url = "https://emesare.com"
+compile_sass = false
+build_search_index = false
+generate_feed = true
+title = "MSR"
+author = "msr@emesare.com"
+
+[markdown]
+highlight_code = false
+
+[extra]
+date_format = "%d %b, %Y"
+email = "msr@emesare.com"
+
+[[extra.main_menu]]
+name = "Posts"
+url = "@/posts/_index.md"
+
+[[extra.main_menu]]
+name = "Projects"
+url = "@/projects/_index.md"

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+<main>
+    <ul class="section-pages">
+        {% for page in section.pages %}
+        <li>
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+            {%- if page.date %}
+            <span>
+                <i>
+                    <time datetime='{{ page.date | date(format=' %+') }}' pubdate>
+                        {{ page.date | date(format=config.extra.date_format) }}
+                    </time>
+                </i>
+            </span>
+            {%- endif %}
+            {%- if page.description %}
+            <span class="section-page-description">{{ page.description }}</span>
+            {%- endif %}
+        </li>
+        {% else %}
+        <li>
+            No pages in section yet
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}
